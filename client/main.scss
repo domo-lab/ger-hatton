@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+// 1. Configuration and helpers (variables, mixins and placeholders)
+@import '{}/imports/ui/abstracts/variables.scss';
+@import '{}/imports/ui/abstracts/mixins.scss';
+// @import '{}/imports/ui/abstracts/placeholders.scss';
+
+// 2. Vendors (external libraries and frameworks)
+
+// 3. Base (commonly used HTML elements styles)
+@import '{}/imports/ui/base/fonts.scss';
+@import '{}/imports/ui/base/base.scss';
+
+// 4. Layout (major elements styles)
+@import '{}/imports/ui/layout/header.scss';
+@import '{}/imports/ui/layout/footer.scss';
+
+// 5. Components (minor elements styles)
+@import '{}/imports/ui/components/board.scss';
+@import '{}/imports/ui/components/button.scss';
+
+// 6. Pages (page-specific styles)
+@import '{}/imports/ui/pages/home.scss';
+
+// 7. Themes
+

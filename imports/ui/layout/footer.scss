@@ -1,0 +1,25 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Footer
+// ------
+
+.footer {
+  background-color: $main-background-color;
+  border-top: 1px solid tint($main-color, 75%);
+  padding: 0.3125rem 0;
+  text-align: center;
+
+  @include noise;
+ }
+
+.powered-by {
+  color: $main-color;
+
+  a {
+    color: $main-color;
+  }
+
+  .fa-heart {
+    color: $primary-color;
+  }
+}

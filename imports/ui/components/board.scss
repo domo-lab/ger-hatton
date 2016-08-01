@@ -1,0 +1,38 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Board
+// -----
+
+.board {
+  padding: 2rem 0 2.5rem;
+}
+
+.heading {
+  margin: 1.875rem auto 1.25rem;
+  text-align: center;
+
+  .heading-divider {
+    margin-bottom: -1.5rem;
+  }
+
+  .heading-title {
+    background-color: $white;
+    margin: 0 auto;
+    width: 13rem;
+
+    @include noise;
+    @include breakpoint(medium) {
+      width: 19rem;
+    }
+  }
+}
+
+.panel {
+  padding: 0.9375rem;
+
+  h3 {
+    color: $areas-color;
+    font-weight: bold;
+    text-align: center;
+  }
+}

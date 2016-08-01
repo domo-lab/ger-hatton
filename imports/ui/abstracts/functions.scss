@@ -1,0 +1,61 @@
+// Functions
+// ---------
+
+/// Converts a Color from HSB values to HSL values
+/// @access private
+@function hsb2hsl($hue, $saturation, $brightness) {
+  $l: ($brightness/2) * (2 - ($saturation/100));
+  $s: ($brightness * $saturation) / if($l < 50, $l * 2, 200 - $l * 2);
+  $h: $hue;
+  @return ('hue': $h, 'saturation': $s, 'lightness': $l);
+}
+
+/// Creates a Color from hue, saturation, and brightness values
+/// @access public
+/// @param {Number} $hue - The hue of the color. Should be between 0 and 360 degrees, inclusive
+/// @param {Number} $saturation - The saturation of the color. Must be between 0% and 100%, inclusive
+/// @param {Number} $brightness - The brightness of the color. Must be between 0% and 100%, inclusive
+/// @return {Color}
+@function hsb($hue, $saturation, $brightness) {
+  @if $brightness == 0 {
+    @return hsl(0, 0, 0);
+  } @else {
+    $hsl: hsb2hsl($hue, $saturation, $brightness);
+    @return hsl($hsl...);
+  }
+}
+
+/// Creates a Color from hue, saturation, brightness, and alpha values
+/// @access public
+/// @param {Number} $hue - The hue of the color. Should be between 0 and 360 degrees, inclusive
+/// @param {Number} $saturation - The saturation of the color. Must be between 0% and 100%, inclusive
+/// @param {Number} $brightness - The brightness of the color. Must be between 0% and 100%, inclusive
+/// @param {Number} $alpha - The opacity of the color. Must be between 0 and 1, inclusive
+/// @return {Color}
+@function hsba($hue, $saturation, $brightness, $alpha) {
+  @if $brightness == 0 {
+    @return hsla(0, 0, 0, $alpha);
+  } @else {
+    $hsl: hsb2hsl($hue, $saturation, $brightness);
+    $hsla: map-merge($hsl, ('alpha': $alpha));
+    @return hsla($hsla...);
+  }
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

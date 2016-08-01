@@ -1,0 +1,27 @@
+@import '{}/imports/ui/abstracts/foundation.scss';
+@import '{}/imports/ui/abstracts/motion.scss';
+
+@import '{}/imports/ui/abstracts/functions.scss';
+
+// Variables
+// ---------
+
+$light-color: #a49a87;
+$medium-color: #644d52;
+$dark-color: #332532;
+
+$main-background-color: tint($dark-color, 90%);
+$highlighted-background-color: shade($dark-color, 0%);
+$main-color: tint($highlighted-background-color, 15%);
+$highlighted-color: shade($main-background-color, 15%);
+
+$areas-background-color: $main-background-color;
+$areas-color: $main-color;
+$areas-border-color: tint($areas-color, 50%);
+
+$services-background-color: $main-background-color;
+$services-color: $main-color;
+$services-border-color: tint($services-color, 50%);
+
+$references-background-color: $main-background-color;
+$references-color: $main-color;

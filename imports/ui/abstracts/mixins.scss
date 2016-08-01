@@ -1,0 +1,13 @@
+//@import '{}/node_modules/foundation-sites/scss/util/mixins';
+
+// Mixins
+// ------
+
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin noise {
+  background-image: url('/img/noise.png');
+  background-repeat: repeat;
+}

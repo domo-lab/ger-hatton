@@ -1,0 +1,26 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Base
+// ----
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include noise;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: shade($primary-color, 20%);
+  }
+}
+
+address p,
+address a {
+  font-style: normal;
+}

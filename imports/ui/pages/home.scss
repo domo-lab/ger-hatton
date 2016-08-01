@@ -1,0 +1,134 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Home
+// ----
+
+.areas {
+  background-color: $areas-background-color;
+
+  @include noise;
+
+  object {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .heading-divider {
+    border-color: $areas-border-color;
+  }
+
+  .heading-title {
+    background-color: $areas-background-color;
+    color: $areas-color;
+  }
+}
+
+.services {
+  background-color: $services-background-color;
+
+  @include noise;
+
+  .heading-divider {
+    border-color: $services-border-color;
+  }
+
+  .heading-title {
+    background-color: $services-background-color;
+    color: $services-color;
+  }
+}
+
+.services-list {
+  margin-left: 3.25rem;
+
+  li {
+    @include breakpoint(medium) {
+      font-size: 1.25rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    .fa-li {
+      color: $primary-color;
+      top: auto;
+    }
+  }
+}
+
+.contact {
+  background-color: $light-color !important;
+  background-image: url('img/water-reflection.jpg');
+  background-position: 20% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 0;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    background-color: rgba(51, 37, 50, 0.5);
+    color: $light-gray;
+    content: 'Paco Marco';
+    display: block;
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: 500;
+    padding: 0 0.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .contact-title {
+    color: $main-background-color;
+    font-weight: bold;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 1em 2em;
+  }
+}
+
+.references {
+  background-color: $references-background-color;
+  padding: 1.5rem 0 0;
+
+  @include noise;
+}
+
+.references-title {
+  color: $references-color;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.references-list {
+
+  li {
+    float: left;
+    list-style-type: none;
+
+    a {
+      border-color: $references-color;
+      border-style: solid;
+      border-width: 0 0 1px;
+      color: $references-color;
+      display: block;
+      margin: 0 2rem 1.5rem 0;
+
+      @include transition(border-color 0.25s ease, color 0.25s ease);
+
+      &:hover {
+        border-color: shade($references-color, 75%);
+        color: shade($references-color, 75%);
+      }
+    }
+  }
+}

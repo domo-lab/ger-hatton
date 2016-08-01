@@ -1,0 +1,14 @@
+@charset 'utf-8';
+
+#copyright .frame,
+#intellectual-property .frame,
+#international-trade .frame {
+  fill: #f77a52;
+  stroke: #f77a52;
+}
+
+#copyright .icon,
+#intellectual-property .icon,
+#international-trade .icon {
+  fill: #332532;
+}

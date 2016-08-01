@@ -1,0 +1,13 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Button
+// ------
+
+.button {
+  @include button;
+
+  &.foggy {
+    @include button-style(rgba($highlighted-background-color, 0.3), rgba($highlighted-background-color, 0.5), $white);
+    border: 2px solid $white;
+  }
+}

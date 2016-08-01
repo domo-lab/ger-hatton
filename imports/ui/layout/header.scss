@@ -1,0 +1,52 @@
+@import '{}/imports/ui/abstracts/utilities.scss';
+
+// Header
+// ------
+
+$padding: 4%;
+$separation: 5%;
+$margin: 98px;
+$logo-width: 20rem;
+
+.header {
+  background-color: $highlighted-background-color;
+  padding: $padding;
+
+  @include noise;
+
+  @include breakpoint(medium) {
+    padding: ($padding / 2) $padding;
+  }
+
+  .logo-container {
+    margin: 0 auto;
+    max-width: $logo-width;
+    position: relative;
+
+    @include breakpoint(medium) {
+      float: left;
+    }
+
+    .logo {
+      // FIXME: vertical height missmatch between object and div.
+      width: 100%;
+    }
+  }
+
+  .description {
+    color: $highlighted-color;
+    font-size: 1.25rem;
+    margin-top: (0.5 * $separation);
+    text-align: center;
+
+    @include breakpoint(medium) {
+      float: right;
+      margin-top: $margin;
+      max-width: calc(100% - #{$logo-width} - #{$separation});
+    }
+
+    @include breakpoint(large) {
+      font-size: 1.375rem;
+    }
+  }
+}
